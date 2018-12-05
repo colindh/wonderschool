@@ -1,0 +1,5 @@
+// imports all files for the app
+// import leaf components first to allow composite components to override if necessary
+import '_task.scss';
+import '_taskGroup.scss';
+import '_taskList.scss';
