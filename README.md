@@ -26,8 +26,10 @@ Dependencies as part of a separate table so we can query to get all tasks a task
 
 Patch
 /api/v1/{taskId}/markChecked
-Endpoint to mark a task checked. Returns 200 if successful, 404 if a task with the passed in id does not exist, 401 if no session or user info, and 500 if unsuccessful.
+Endpoint to mark a task checked.
+Returns 200 if successful, 404 if a task with the passed in id does not exist, 401 if no session or user info, and 500 if unsuccessful.
 
 PATCH
 /api/v1/{taskId}/uncheck
-Endpoint to uncheck a task. Returns 200 if successful, 404 if a task with the passed in id does not exist, 401 if no session or user info, and 500 if unsuccessful.
+Endpoint to uncheck a task.
+Returns 200 if successful, 404 if a task with the passed in id does not exist, 401 if no session or user info, and 500 if unsuccessful.
