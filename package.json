@@ -1,0 +1,14 @@
+{
+  "name": "Wonderschool",
+  "version": "1.0.0",
+  "description": "Code sample for Wonderschool",
+  "author": "Colin Hume",
+  "license": "ALv2",
+  "scripts": {
+    "start": "server.js",
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
