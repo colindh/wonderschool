@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TaskList from './components/tasklist.component';
+import TaskList from './components/taskList.component';
 
 window.addEventListener(
   'DOMContentLoaded',
