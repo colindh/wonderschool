@@ -109,8 +109,19 @@ export default class TaskList extends React.Component {
    * @param {object} task - the task to toggleTask
    * @return {void}
    */
-  toggleTask(task) {}
-
+  toggleTask(task) {
+    let tasks = this.state.tasks;
+    let taskId = tasks.indexOf(task);
+    if (tasks[taskId].completedAt) {
+      tasks[taskId].completedAt = null;
+    } else {
+      tasks[taskId].completedAt = Date.now();
+    }
+    this.setState({
+      mode: this.state.mode,
+      tasks: tasks
+    });
+  }
 
   /**
    * Gets the data needed for the task groups from the top level tasks.
@@ -189,6 +200,7 @@ export default class TaskList extends React.Component {
     let elementMap = tasks.map((task, i) => {
       return <Task
           task={task}
+          tasks={this.state.tasks}
           toggleCallback={toggleTask}
           key={i}>
       </Task>;

@@ -2,3 +2,31 @@
   font-family: Arial;
   padding: 50px;
 }
+
+.todoPanel h1.todoHeader {
+  font-size: 26px;
+  font-weight: normal;
+}
+
+.todoPanel h1.todoHeader .allGroupsLink {
+  font-size: 13px;
+  font-weight: normal;
+  color: #0000ee;
+  float: right;
+  margin-top: 8px;
+}
+
+.todoPanel ul.taskList {
+  padding: 0;
+  border-bottom: 1px solid #999999;
+  list-style: none;
+}
+
+.todoPanel ul.taskList li {
+  padding-left: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-top: 1px solid #999999;
+  background-repeat: no-repeat;
+  background-position: center left 5px;
+}

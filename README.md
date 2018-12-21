@@ -1,6 +1,6 @@
 # Coding Challenge for Wonderschool #
 This is Colin Hume's coding challenge for the Wonderschool application.
-(https://www.dropbox.com/sh/8icefhbj8w39t20/AAAIuaNcW-1yd_rS36JLmqqoa)
+(in the assignment folder)
 The three sections below outline the three parts of the challenge.
 
 ## React UI ##

@@ -1,0 +1,12 @@
+ul li.groupDisplay {
+  background-image: url('/assets/Group.svg');
+}
+
+ul li.groupDisplay .groupName {
+  font-weight: bold;
+}
+
+ul li.groupDisplay .groupStatus {
+  color: #999999;
+  text-transform: uppercase;
+}

@@ -9,6 +9,11 @@ import React from 'react';
  *   </TaskGroup>
  */
 export default class TaskGroup extends React.Component {
+  /**
+   * Calculates completion message for a group af tasks.
+   * @param {object} groupSummary - the group to get the message for
+   * @return {string} the task completion message
+   */
   getStatusMessage(groupSummary) {
     return groupSummary.completedTasks +
         ' of ' +
@@ -16,6 +21,9 @@ export default class TaskGroup extends React.Component {
         ' tasks complete';
   }
 
+  /**
+   * Wrapper around callback to allow binding of this
+   */
   handleClick() {
     this.props.groupClickCallback(this.props.groupSummary);
   }
