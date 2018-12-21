@@ -1,12 +1,12 @@
-ul li.groupDisplay {
+ul.taskList li.groupDisplay {
   background-image: url('/assets/Group.svg');
 }
 
-ul li.groupDisplay .groupName {
+ul.taskList li.groupDisplay .groupName {
   font-weight: bold;
 }
 
-ul li.groupDisplay .groupStatus {
+ul.taskList li.groupDisplay .groupStatus {
   color: #999999;
   text-transform: uppercase;
 }

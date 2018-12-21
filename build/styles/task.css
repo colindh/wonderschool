@@ -1,17 +1,17 @@
-ul li.taskDisplay {
+ul.taskList li.taskDisplay {
   font-weight: bold;
 }
 
-ul li.taskDisplay.completed {
+ul.taskList li.taskDisplay.completed {
   background-image: url('/assets/Completed.svg');
   text-decoration: line-through;
 }
 
-ul li.taskDisplay.incomplete {
+ul.taskList li.taskDisplay.incomplete {
   background-image: url('/assets/Incomplete.svg');
 }
 
-ul li.taskDisplay.locked {
+ul.taskList li.taskDisplay.locked {
   background-image: url('/assets/Locked.svg');
   background-position: center left 10px;
   color: #999999;
