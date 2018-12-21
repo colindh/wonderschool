@@ -6,6 +6,7 @@ The three sections below outline the three parts of the challenge.
 ## React UI ##
 The JavaScript is located under the `src/js` folder.
 Styles are under `build/styles` (on a larger project they would be in `src/styles` and sass compiled).
+Run `npm i` to install dependencies.
 Run `npm start` to host on port 3000.
 Visit http://localhost:3000/ to view or test.
 

@@ -1,3 +1,4 @@
+import Group from '../models/group.model';
 import React from 'react';
 import Task from './task.component';
 import TaskGroup from './taskGroup.component';
@@ -114,6 +115,7 @@ export default class TaskList extends React.Component {
     let taskId = tasks.indexOf(task);
     if (tasks[taskId].completedAt) {
       tasks[taskId].completedAt = null;
+      // should we uncheck dependent tasks too?
     } else {
       tasks[taskId].completedAt = Date.now();
     }
@@ -135,32 +137,18 @@ export default class TaskList extends React.Component {
       let existingGroupSummary = groupData.filter(
         (groupData) => groupData.group === task.group)[0];
       if (existingGroupSummary) {
-        this._updateGroupCompletion(existingGroupSummary, task);
+        existingGroupSummary.updateCompletion(task);
       } else {
-        let groupSummary = {
+        let groupSummary = new Group({
           group: task.group,
           totalTasks: 0,
           completedTasks: 0
-        }
+        });
         groupData.push(groupSummary);
-        this._updateGroupCompletion(groupSummary, task);
+        groupSummary.updateCompletion(task);
       }
     });
     return groupData;
-  }
-
-  /**
-   * Helper function to update group with completion data for a task
-   * @param {object} groupSummary - the current summary for the group
-   *                                (will be mutated)
-   * @param {task} task - the task to check for completion
-   * @return {void}
-   */
-  _updateGroupCompletion(groupSummary, task) {
-    groupSummary.totalTasks += 1;
-    if (task.completedAt) {
-      groupSummary.completedTasks += 1;
-    }
   }
 
   /**
@@ -170,7 +158,7 @@ export default class TaskList extends React.Component {
     if (mode.view === groupView) {
       let callback = this.switchToAllGroups.bind(this);
       return <h1 className="todoHeader">
-        {mode.group.group}
+        {mode.group}
         <span className="allGroupsLink" onClick={callback}>
           All Groups
         </span>
@@ -185,7 +173,7 @@ export default class TaskList extends React.Component {
   **/
   _renderBody(mode, tasks) {
     if (mode.view === groupView) {
-      let group = mode.group.group;
+      let group = mode.group;
       return this._renderTasksForGroup(tasks.filter(task =>  task.group === group));
     } else {
       return this._renderGroups(tasks);

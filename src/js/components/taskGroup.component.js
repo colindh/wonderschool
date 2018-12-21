@@ -1,31 +1,20 @@
+import Group from '../models/group.model';
 import React from 'react';
 
 /**
  * Component to display a task group.
  * Usage:
  *   <TaskGroup
- *     groupSummary={[group summary data]}
+ *     groupSummary={[list af Group objects]}
  *     groupClickCallback={[function to call on click]}>
  *   </TaskGroup>
  */
 export default class TaskGroup extends React.Component {
   /**
-   * Calculates completion message for a group af tasks.
-   * @param {object} groupSummary - the group to get the message for
-   * @return {string} the task completion message
-   */
-  getStatusMessage(groupSummary) {
-    return groupSummary.completedTasks +
-        ' of ' +
-        groupSummary.totalTasks +
-        ' tasks complete';
-  }
-
-  /**
    * Wrapper around callback to allow binding of this
    */
   handleClick() {
-    this.props.groupClickCallback(this.props.groupSummary);
+    this.props.groupClickCallback(this.props.groupSummary.group);
   }
 
   render() {
@@ -40,7 +29,7 @@ export default class TaskGroup extends React.Component {
             {groupSummary.group}
           </div>
           <div className="groupStatus">
-            {this.getStatusMessage(groupSummary)}
+            {groupSummary.getStatusMessage()}
           </div>
         </li>;
       }
