@@ -1,5 +1,6 @@
 ul.taskList li.taskDisplay {
   font-weight: bold;
+  cursor: pointer;
 }
 
 ul.taskList li.taskDisplay.completed {
@@ -15,4 +16,5 @@ ul.taskList li.taskDisplay.locked {
   background-image: url('/assets/Locked.svg');
   background-position: center left 10px;
   color: #999999;
+  cursor: not-allowed;
 }

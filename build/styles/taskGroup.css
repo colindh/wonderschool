@@ -1,5 +1,6 @@
 ul.taskList li.groupDisplay {
   background-image: url('/assets/Group.svg');
+  cursor: pointer;
 }
 
 ul.taskList li.groupDisplay .groupName {

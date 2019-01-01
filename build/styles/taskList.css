@@ -14,6 +14,7 @@
   color: #0000ee;
   float: right;
   margin-top: 8px;
+  cursor: pointer;
 }
 
 .todoPanel ul.taskList {
